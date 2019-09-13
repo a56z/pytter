@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create main sample user.
+User.create!(name: "Example User",
+	         email: "example@crowdstrike.com",
+	         password:              "foobar",
+	         password_confirmation: "foobar",
+           admin: false)
+
+# Generate a bunch of additional users.
+399.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n+1}@crowdstrike.com"
+  password = "password"
+  User.create!(name: name,
+               email: email,
+               password:              password,
+               password_confirmation: password)
+end
+ 

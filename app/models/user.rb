@@ -7,7 +7,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true # has_secure_password catches nil passwords, this is just to pass the test in "test/integration/users_edit_test.rb" with an empty password
 
   # Returns the hash digest of the given string.
   def User.digest(string)
