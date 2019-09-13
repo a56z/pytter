@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create main sample user.
-User.create!(name: "Example User",
-	         email: "example@crowdstrike.com",
-	         password:              "foobar",
-	         password_confirmation: "foobar",
-           admin: false)
+
+# Create a main sample user.
+User.create!(name:  "Example User",
+             email: "example@railstutorial.org",
+             password:              "foobar",
+             password_confirmation: "foobar")
 
 # Generate a bunch of additional users.
-399.times do |n|
-  name = Faker::Name.name
-  email = "example-#{n+1}@crowdstrike.com"
+99.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(name: name,
-               email: email,
-               password:              password,
-               password_confirmation: password)
+  User.create!(name:  name,
+              email: email,
+              password:              password,
+              password_confirmation: password)
 end
- 
