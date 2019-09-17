@@ -24,7 +24,7 @@ end
 users = User.order(:created_at).take(6)
 50.times do
   content = Faker::ChuckNorris.fact
-  users.each { |user| user.microposts.create!(content: ("#{content}").sample ) }
+  users.each { |user| user.microposts.create!(content: content) }
 end
 
 # Create following relationships.
