@@ -67,8 +67,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   
-  host = 'https://thawing-gorge-34403.herokuapp.com/'
-  # host = 'https://radiant-retreat-88590.herokuapp.com/'
+  host = 'https://radiant-retreat-88590.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
